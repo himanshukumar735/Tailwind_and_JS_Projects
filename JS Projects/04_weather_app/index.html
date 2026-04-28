@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app | iamhimanshukr</title>
+    <link rel="stylesheet" href="../../dist/style.css">
+</head>
+
+<body class="bg-slate-500 flex h-screen justify-center items-center">
+    <div class="weather-card bg-[linear-gradient(135deg,#00feba,#5b548a)] w-[90%] max-w-[400px] p-10 rounded-3xl
+     text-white -mt-10">
+
+        <div class="search-box flex items-center justify-between">
+            <input type="text" id="cityInput" placeholder="enter city name" class=" placeholder:text-gray-800
+             placeholder:font-normal border-0 outline-none bg-[#ebfffc] text-[#555] p-[10px_25px]
+            h-[60px] rounded-[30px] flex-1 mr-4 text-lg">
+
+            <button id="searchBtn" class="bg-[#ebfffc] rounded-3xl w-[60px] h-[60px] flex items-center justify-center cursor-pointer">
+                <img src="images/search.png" class="w-4">
+            </button>
+        </div>
+
+        <div class="weather-info flex flex-col items-center">
+            <img src="images/rain.png" id="weatherIcon" class="w-[170px] mt-8">
+            <h1 id="temp" class="text-7xl font-semibold mt-4">22°c</h1>
+            <h2 id="city" class="text-5xl font-normal">New York</h2>
+        </div>
+
+        <div class="flex justify-between w-full mt-10 px-2">
+            <div class="flex items-center">
+                <img src="images/humidity.png" class="w-10 mr-2">
+                <div class="text-left">
+                    <h3 id="humidity" class="text-2xl font-medium leading-tight">48%</h3>
+                    <p class="text-lg">Humidity</p>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <img src="images/wind.png" class="w-10 mr-2">
+                <div class="text-left">
+                    <h3 id="wind" class="text-2xl font-medium leading-tight">15 km/h</h3>
+                    <p class="text-base">Wind Speed</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>

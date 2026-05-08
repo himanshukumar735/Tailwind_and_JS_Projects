@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - JS Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white flex items-center justify-center min-h-screen">
+
+    <div class="text-center w-full max-w-md p-4">
+        <h1 class="text-4xl font-bold mb-8 text-cyan-400">Tic Tac Toe</h1>
+
+        <div id="status" class="text-xl mb-4 font-semibold text-zinc-300">
+            Player <span class="text-cyan-400">X</span>'s Turn
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 bg-zinc-800 p-2 rounded-lg shadow-2xl border border-zinc-700">
+            <button data-index="0" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            <button data-index="1" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            <button data-index="2" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            
+            <button data-index="3" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            <button data-index="4" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            <button data-index="5" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            
+            <button data-index="6" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            <button data-index="7" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+            <button data-index="8" class="cell h-24 sm:h-32 bg-zinc-700 hover:bg-zinc-600 rounded-md text-5xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"></button>
+        </div>
+
+        <button id="reset-btn" class="mt-8 px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-full transition-colors duration-200 uppercase tracking-wider shadow-lg">
+            Restart Game
+        </button>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

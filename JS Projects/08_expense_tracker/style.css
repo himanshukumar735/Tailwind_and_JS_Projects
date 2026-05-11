@@ -1,0 +1,25 @@
+/* Custom styles if needed */
+body {
+    transition: background-color 0.3s ease;
+}
+
+/* Row hover effect */
+/* tr:hover {
+    background-color: #f9fafb;
+} */
+
+/* Delete button style */
+.delete-btn {
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* Input validation error style */
+.input-error {
+    border: 2px solid #ef4444 !important;
+}

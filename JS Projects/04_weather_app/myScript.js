@@ -47,9 +47,10 @@ async function fetchWeatherData(cityName) {
         const data = await response.json();         // response.json also returns a promise
         console.log(data);
         updateWeatherUI(data);                      // data is passed as parameter and it is called
-    } 
-    
-    else if(response.status === 404){
+        cityStorage(cityName);
+    }
+
+    else if (response.status === 404) {
         alert("City not found");
     }
 
@@ -86,3 +87,18 @@ const weatherIcon = {
     default: "images/search.png"
 }
 
+// local storage 
+function cityStorage(cityName) {
+    window.localStorage.setItem('previousCity', cityName);
+}
+
+function loadPreviousCity() {
+    fetchWeatherData(window.localStorage.getItem(`previousCity`));      // previousCity should be enclosed
+}
+
+if (window.localStorage.getItem(`previousCity`) === null) {
+    fetchWeatherData("delhi");
+}
+else {
+    loadPreviousCity();
+}

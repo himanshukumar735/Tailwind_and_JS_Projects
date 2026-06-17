@@ -42,21 +42,10 @@ const questionsArray = [
             { text: "Noida", correct: false }
         ]
     }
-]
+];
 
 let currentQuestionNumber = 0;
 let score = 0;
-
-function startQuiz() {
-    currentQuestionNumber = 0;
-    score = 0;
-
-    nextBtn.innerText = "Next";
-    nextBtn.classList.add("hidden");
-
-    showQuestion();
-    showAnswer();
-}
 
 function showQuestion() {
     question.innerText = questionsArray[currentQuestionNumber].question;
@@ -92,7 +81,7 @@ function showAnswer() {
 function handleAnswerClick(optionButton, element) {
     optionButton.addEventListener("click", function () {
 
-        if (element.correct) {
+        if (element.correct === true) {
             optionButton.classList.add("bg-green-700");
             score++;
         } else {
@@ -118,20 +107,18 @@ function disableAnswerButtons() {
     }
 }
 
-nextBtn.addEventListener("click", function () {
+function nextQuestion() {
 
-    if (currentQuestionNumber < questionsArray.length - 1) {
+    answerButtonsContainer.innerHTML = "";
 
-        currentQuestionNumber++;
+    currentQuestionNumber++;
 
-        nextBtn.classList.add("hidden");
+    if (currentQuestionNumber < questionsArray.length) {
 
         showQuestion();
         showAnswer();
 
-    } else if (nextBtn.innerText === "Restart Quiz") {
-
-        startQuiz();
+        nextBtn.classList.add("hidden");
 
     } else {
 
@@ -142,6 +129,30 @@ nextBtn.addEventListener("click", function () {
 
         nextBtn.innerText = "Restart Quiz";
     }
+}
+
+function restartQuiz() {
+
+    currentQuestionNumber = 0;
+    score = 0;
+
+    nextBtn.innerText = "Next";
+    nextBtn.classList.add("hidden");
+
+    showQuestion();
+    showAnswer();
+}
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !nextBtn.classList.contains("hidden")) {
+
+        if (nextBtn.innerText === "Restart Quiz") {
+            restartQuiz();
+        } else {
+            nextQuestion();
+        }
+    }
 });
 
-startQuiz();
+showQuestion();
+showAnswer();

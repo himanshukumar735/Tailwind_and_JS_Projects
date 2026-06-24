@@ -4,11 +4,23 @@ const displayArea = document.getElementById("profile-card");
 const paraChild = document.getElementById("para");
 const gitURL = "https://api.github.com/users"
 
-const btnListener = () => {
-    button.addEventListener("click", function name(params) {
-        const storeUserName = userInput.value.trim();
-        fetchUser(storeUserName);
-        userInput.value = "";
+const handleSearch = () => {
+    const storeUserName = userInput.value.trim();
+    fetchUser(storeUserName);
+    userInput.value = "";
+}
+
+const attachEnterListener = () => {
+    document.addEventListener('keydown', function (e) {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    })
+}
+
+const attachButtonListener = () => {
+    button.addEventListener("click", function () {
+        handleSearch();
     })
 }
 
@@ -66,4 +78,6 @@ const updateUi = (userBio, userName, userImg, userFollowers) => {
 
 }
 
-btnListener();
+
+attachButtonListener();
+attachEnterListener();
